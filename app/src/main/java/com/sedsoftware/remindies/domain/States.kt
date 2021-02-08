@@ -1,5 +1,6 @@
 package com.sedsoftware.remindies.domain
 
+import com.sedsoftware.remindies.domain.entity.Shot
 import java.time.LocalDateTime
 
 
@@ -12,5 +13,9 @@ sealed class States {
         val saveEnabled: Boolean = false,
         val period: RemindiePeriod = RemindiePeriod.NONE,
         val each: Int = 0
+    )
+
+    data class Calendar(
+        val schedule: List<Shot> = emptyList()
     )
 }
