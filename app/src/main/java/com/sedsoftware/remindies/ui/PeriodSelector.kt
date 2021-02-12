@@ -4,32 +4,33 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.sedsoftware.remindies.domain.RemindiePeriod
 import com.sedsoftware.remindies.ui.ui.RemindiesUITheme
 
 @Composable
-fun PeriodSelector(selected: RemindiePeriod) {
+fun PeriodSelector(selected: RemindiePeriod, modifier: Modifier) {
     Row {
         Column {
-            Text(RemindiePeriod.NONE.str)
-            Text(RemindiePeriod.HOURLY.str)
+            Text(text = RemindiePeriod.NONE.str)
+            Text(text = RemindiePeriod.HOURLY.str)
         }
         Column {
-            Text(RemindiePeriod.DAILY.str)
-            Text(RemindiePeriod.WEEKLY.str)
+            Text(text = RemindiePeriod.DAILY.str)
+            Text(text = RemindiePeriod.WEEKLY.str)
         }
         Column {
-            Text(RemindiePeriod.MONTHLY.str)
-            Text(RemindiePeriod.YEARLY.str)
+            Text(text = RemindiePeriod.MONTHLY.str)
+            Text(text = RemindiePeriod.YEARLY.str)
         }
     }
 }
 
-@Preview
 @Composable
+@Preview(showBackground = true)
 fun PeriodSelectorPreview() {
     RemindiesUITheme {
-        PeriodSelector(RemindiePeriod.MONTHLY)
+        PeriodSelector(RemindiePeriod.MONTHLY, Modifier)
     }
 }
