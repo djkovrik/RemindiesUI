@@ -10,7 +10,7 @@ import com.sedsoftware.remindies.domain.RemindiePeriod
 import com.sedsoftware.remindies.ui.ui.RemindiesUITheme
 
 @Composable
-fun PeriodSelector(selected: RemindiePeriod, modifier: Modifier) {
+fun PeriodSelector(selected: RemindiePeriod, modifier: Modifier = Modifier) {
     Row {
         Column {
             Text(text = RemindiePeriod.NONE.str)

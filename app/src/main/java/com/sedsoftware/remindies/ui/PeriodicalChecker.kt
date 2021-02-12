@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.sedsoftware.remindies.ui.ui.RemindiesUITheme
 
 @Composable
-fun PeriodicalChecker(enabled: Boolean, each: Int, modifier: Modifier) {
+fun PeriodicalChecker(enabled: Boolean, each: Int, modifier: Modifier = Modifier) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Checkbox(
             checked = enabled,
@@ -23,6 +23,7 @@ fun PeriodicalChecker(enabled: Boolean, each: Int, modifier: Modifier) {
         TextField(
             value = each.toString(),
             onValueChange = {},
+            placeholder = { Text("each") },
             singleLine = true
         )
     }
