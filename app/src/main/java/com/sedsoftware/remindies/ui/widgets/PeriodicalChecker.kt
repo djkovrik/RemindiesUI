@@ -1,4 +1,4 @@
-package com.sedsoftware.remindies.ui
+package com.sedsoftware.remindies.ui.widgets
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Checkbox
