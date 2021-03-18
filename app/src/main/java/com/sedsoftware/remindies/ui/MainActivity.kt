@@ -1,17 +1,11 @@
 package com.sedsoftware.remindies.ui
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.setContent
-import androidx.compose.ui.tooling.preview.Preview
-import com.sedsoftware.remindies.domain.RemindiePeriod
-import com.sedsoftware.remindies.domain.States
 import com.sedsoftware.remindies.ui.ui.RemindiesUITheme
-import com.sedsoftware.remindies.ui.widgets.NewItem
-import java.time.LocalDateTime
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,26 +14,18 @@ class MainActivity : AppCompatActivity() {
             RemindiesUITheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    NewItem(addNewState)
+
                 }
             }
         }
     }
 }
 
-private val addNewState = States.AddNew(
-    title = "Task name",
-    shot = LocalDateTime.now(),
-    periodical = true,
-    saveEnabled = true,
-    period = RemindiePeriod.DAILY,
-    each = 3
-)
 
-@Composable
-@Preview(showBackground = true)
-fun AddNewItemPreview() {
-    RemindiesUITheme {
-        NewItem(addNewState)
-    }
-}
+//@Composable
+//@Preview(showBackground = true)
+//fun AddNewItemPreview() {
+//    RemindiesUITheme {
+//        NewItem(addNewState)
+//    }
+//}
