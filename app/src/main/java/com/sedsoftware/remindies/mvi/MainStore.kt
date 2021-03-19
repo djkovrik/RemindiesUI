@@ -53,11 +53,12 @@ interface MainStore : Store<Intent, State, Label> {
 
     sealed class Result {
         // Main
-        data class ShotsAvailable(val shots: List<Shot>) : Result()
-        data class DisplayModeSelected(val mode: ShotsDisplayMode) : Result()
+        data class ShotsAvailable(val value: List<Shot>) : Result()
+        data class DisplayModeSelected(val value: ShotsDisplayMode) : Result()
         object ProgressVisible : Result()
         object ProgressHidden : Result()
         object EmptyScreenVisible : Result()
+        object EmptyScreenHidden : Result()
         object AddNewOneDisplayed : Result()
         object AddNewOneHidden : Result()
         object CalendarDisplayed : Result()

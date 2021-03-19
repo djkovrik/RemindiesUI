@@ -20,8 +20,53 @@ object MainStoreFactory {
         ) {}
 
     private object MainReducer : Reducer<State, Result> {
-        override fun State.reduce(result: Result): State {
-            TODO("Not yet implemented")
+        override fun State.reduce(result: Result): State = when (result) {
+            is Result.ShotsAvailable -> copy(
+                schedule = result.value
+            )
+            is Result.DisplayModeSelected -> copy(
+                displayMode = result.value
+            )
+            is Result.ProgressVisible -> copy(
+                loadingProgressVisible = true
+            )
+            is Result.ProgressHidden -> copy(
+                loadingProgressVisible = false
+            )
+            is Result.EmptyScreenVisible -> copy(
+                emptyScreenVisible = true
+            )
+            is Result.EmptyScreenHidden -> copy(
+                emptyScreenVisible = false
+            )
+            is Result.AddNewOneDisplayed -> copy(
+                addNewOneVisible = true
+            )
+            is Result.AddNewOneHidden -> copy(
+                addNewOneVisible = false
+            )
+            is Result.CalendarDisplayed -> copy(
+                calendarVisible = true
+            )
+            is Result.CalendarHidden -> copy(
+                calendarVisible = false
+            )
+            is Result.TitleEntered -> copy(
+                title = result.value
+            )
+            is Result.ShotTimeSelected -> copy(
+                shot = result.value
+            )
+            is Result.PeriodEachChanged -> copy(
+                each = result.value
+            )
+            is Result.PeriodicalSelected -> copy(
+                periodical = result.value
+            )
+            is Result.PeriodSelected -> copy(
+                period = result.value
+            )
+            is Result.ItemCreated -> this
         }
     }
 
@@ -36,6 +81,7 @@ object MainStoreFactory {
                     dispatch(Result.ProgressHidden)
 
                     if (shots.isNotEmpty()) {
+                        dispatch(Result.EmptyScreenHidden)
                         dispatch(Result.ShotsAvailable(shots))
                     } else {
                         dispatch(Result.EmptyScreenVisible)
