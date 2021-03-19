@@ -2,8 +2,9 @@ package com.sedsoftware.remindies.domain.entity
 
 import com.sedsoftware.remindies.domain.RemindiePeriod
 import com.sedsoftware.remindies.domain.RemindieType
-import java.time.LocalDateTime
-import java.util.*
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.TimeZone
+
 
 data class Remindie(
     val id: Long = 0,

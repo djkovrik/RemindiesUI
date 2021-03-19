@@ -1,6 +1,7 @@
 package com.sedsoftware.remindies.domain.entity
 
-import java.time.LocalDateTime
+import kotlinx.datetime.LocalDateTime
+
 
 data class Shot(
     val remindie: Remindie,
