@@ -10,5 +10,6 @@ object Global {
 
     private val state = MainStoreFactory().create()
 
-    val statesFlow: Flow<State> = state.states
+    val statesFlow: Flow<State>
+        get() = state.states
 }
