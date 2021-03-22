@@ -18,7 +18,7 @@ interface MainStoreView : MviView<Model, Event> {
         val displayMode: ShotsDisplayMode,
         val schedule: List<Shot>,
         val title: String,
-        val shot: LocalDateTime,
+        val shot: LocalDateTime?,
         val periodical: Boolean,
         val period: RemindiePeriod,
         val each: Int,
@@ -33,7 +33,7 @@ interface MainStoreView : MviView<Model, Event> {
         data class ShotTimeSelected(val value: LocalDateTime) : Event()
         object ShowAddNewItemClicked : Event()
         object HideAddNewItemClicked : Event()
-        object ShowCalendarNewItemClicked : Event()
-        object HideCalendarNewItemClicked : Event()
+        object ShowCalendarClicked : Event()
+        object HideCalendarClicked : Event()
     }
 }
