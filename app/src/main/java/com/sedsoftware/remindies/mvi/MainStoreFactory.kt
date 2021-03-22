@@ -8,9 +8,9 @@ import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import com.sedsoftware.remindies.data.RepositoryStub
 import com.sedsoftware.remindies.mvi.MainStore.*
 
-object MainStoreFactory {
+class MainStoreFactory {
 
-    val store: MainStore =
+    fun create(): MainStore =
         object : MainStore, Store<Intent, State, Label> by DefaultStoreFactory.create(
             name = "MainStore",
             initialState = State(),

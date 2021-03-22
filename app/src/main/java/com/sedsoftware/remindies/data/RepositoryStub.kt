@@ -268,7 +268,7 @@ object RepositoryStub {
     )
 
     suspend fun getShots(): List<Shot> {
-        delay(2_000L)
+        delay(3_000L)
         return remindiesInOwnTimeZone.map { it.toNearestShot() }
     }
 }
