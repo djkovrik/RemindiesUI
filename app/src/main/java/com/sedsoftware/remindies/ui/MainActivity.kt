@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.tooling.preview.Preview
 import com.sedsoftware.remindies.mvi.Global
 import com.sedsoftware.remindies.mvi.MainStore
 import com.sedsoftware.remindies.ui.ui.RemindiesUITheme
@@ -34,4 +35,11 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun MainScreen(state: MainStore.State) {
     Text("Wohoo!")
+}
+
+
+@Preview
+@Composable
+fun MainScreenPreview() {
+    MainScreen(PreviewStates.empty)
 }
